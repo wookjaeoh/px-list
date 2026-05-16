@@ -138,42 +138,6 @@ function addBulletList(slide, bullets, x, y, w, options = {}) {
   });
 }
 
-function addMetricCard(slide, x, y, label, value) {
-  slide.addShape(pptx.ShapeType.roundRect, {
-    x,
-    y,
-    w: 2.45,
-    h: 1.28,
-    rectRadius: 0.12,
-    fill: { color: theme.white },
-    line: { color: "E2E8E1", transparency: 0 },
-    shadow: { type: "outer", color: "000000", opacity: 0.12, blur: 1, angle: 45, distance: 1 },
-  });
-  slide.addText(label, {
-    x: x + 0.2,
-    y: y + 0.22,
-    w: 2.05,
-    h: 0.2,
-    fontFace,
-    fontSize: 10.5,
-    bold: true,
-    color: theme.textSoft,
-    margin: 0,
-  });
-  slide.addText(value, {
-    x: x + 0.2,
-    y: y + 0.58,
-    w: 2.05,
-    h: 0.35,
-    fontFace,
-    fontSize: 19,
-    bold: true,
-    color: theme.houseGreen,
-    margin: 0,
-    fit: "shrink",
-  });
-}
-
 function createOpeningSlide(pptx, item, slideCount) {
   const slide = pptx.addSlide();
   slide.background = { color: theme.houseGreen };
